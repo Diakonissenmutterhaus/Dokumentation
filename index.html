@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Minha Documentação</title>
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN e estilos extras -->
+  <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     // Dark mode automático
@@ -59,46 +60,6 @@
     &copy; 2024 Minha Documentação. Feito com 💙 e TailwindCSS.
   </footer>
 
-  <script>
-    function toggleDarkMode() {
-      const html = document.documentElement
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark')
-        localStorage.theme = 'light'
-      } else {
-        html.classList.add('dark')
-        localStorage.theme = 'dark'
-      }
-    }
-
-    function appendDocToMenu(title, index) {
-      const li = document.createElement('li')
-      const a = document.createElement('a')
-      a.href = `docs/template.html?doc=${index}`
-      a.textContent = title
-      a.className = 'block hover:underline'
-      li.appendChild(a)
-      document.getElementById('menu-list').appendChild(li)
-    }
-
-    function loadDocs() {
-      const docs = JSON.parse(localStorage.getItem('customDocs') || '[]')
-      docs.forEach((doc, idx) => appendDocToMenu(doc.title, idx))
-    }
-
-    function addDoc() {
-      const title = document.getElementById('docTitle').value.trim()
-      const text = document.getElementById('docText').value.trim()
-      if (!title || !text) return
-      const docs = JSON.parse(localStorage.getItem('customDocs') || '[]')
-      docs.push({ title, content: text })
-      localStorage.setItem('customDocs', JSON.stringify(docs))
-      appendDocToMenu(title, docs.length - 1)
-      document.getElementById('docTitle').value = ''
-      document.getElementById('docText').value = ''
-    }
-
-    loadDocs()
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,16 @@
+/* Estilos simples para complementar o Tailwind */
+body {
+  font-family: Arial, sans-serif;
+}
+
+aside nav ul {
+  padding-left: 0;
+}
+
+aside nav li {
+  list-style: none;
+}
+
+textarea {
+  min-height: 6rem;
+}

@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" class="bg-gray-50 dark:bg-gray-900">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minha Documentação</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Dark mode automático
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
 </head>
-<body>
-    
+<body class="text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+  <header class="bg-white dark:bg-gray-950 shadow p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Minha Documentação</h1>
+    <button onclick="toggleDarkMode()" class="rounded px-3 py-1 border border-gray-300 dark:border-gray-700">
+      🌙/☀️
+    </button>
+  </header>
+
+  <div class="flex flex-1">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-100 dark:bg-gray-800 p-4 hidden md:block min-h-full">
+      <nav>
+        <ul class="space-y-2">
+          <li><a href="#introducao" class="block hover:underline">Introdução</a></li>
+          <li><a href="#instalacao" class="block hover:underline">Instalação</a></li>
+          <li><a href="#uso" class="block hover:underline">Como Usar</a></li>
+          <li><a href="#faq" class="block hover:underline">FAQ</a></li>
+          <li><a href="#contato" class="block hover:underline">Contato</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="flex-1 p-6">
+      <section id="introducao" class="mb-10">
+        <h2 class="text-xl font-bold mb-2">Introdução</h2>
+        <p>Bem-vindo à sua documentação! Aqui você explica o propósito, para quem é, etc.</p>
+      </section>
+
+      <section id="instalacao" class="mb-10">
+        <h2 class="text-xl font-bold mb-2">Instalação</h2>
+        <pre class="bg-gray-200 dark:bg-gray-700 rounded p-4 overflow-x-auto text-sm">npm install meu-projeto</pre>
+        <p>Instruções de instalação...</p>
+      </section>
+
+      <section id="uso" class="mb-10">
+        <h2 class="text-xl font-bold mb-2">Como Usar</h2>
+        <p>Explique aqui como utilizar seu projeto passo a passo.</p>
+      </section>
+
+      <section id="faq" class="mb-10">
+        <h2 class="text-xl font-bold mb-2">FAQ</h2>
+        <ul class="list-disc ml-6">
+          <li>Como faço para X?</li>
+          <li>Onde encontro Y?</li>
+        </ul>
+      </section>
+
+      <section id="contato">
+        <h2 class="text-xl font-bold mb-2">Contato</h2>
+        <p>Qualquer dúvida, mande um e-mail para <a href="mailto:seu@email.com" class="underline text-blue-600 dark:text-blue-400">seu@email.com</a>.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="bg-white dark:bg-gray-950 text-center p-4 text-sm border-t border-gray-200 dark:border-gray-800">
+    &copy; 2024 Minha Documentação. Feito com 💙 e TailwindCSS.
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      const html = document.documentElement
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark')
+        localStorage.theme = 'light'
+      } else {
+        html.classList.add('dark')
+        localStorage.theme = 'dark'
+      }
+    }
+  </script>
 </body>
 </html>

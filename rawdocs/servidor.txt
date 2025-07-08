@@ -1,0 +1,5 @@
+Configuracao do servidor interno
+
+1. Instalar pacotes de rede
+2. Ajustar firewall
+3. Criar usuarios padrao

@@ -1,0 +1,5 @@
+Migracao dos dados das Schwestern para o novo notebook
+
+1. Preparar os marcadores do Firefox
+2. Organizar arquivos em pastas
+3. Copiar tudo para o pendrive

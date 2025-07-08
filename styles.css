@@ -1,6 +1,20 @@
 /* Estilos simples para complementar o Tailwind */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+}
+
+header, footer {
+  background: #1f2937;
+}
+
+button {
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #3b82f6;
+  color: #fff;
 }
 
 aside nav ul {

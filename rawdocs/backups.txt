@@ -1,0 +1,5 @@
+Rotina de backups semanal
+
+- Segunda: full backup
+- Quarta: incremental
+- Sexta: upload na nuvem

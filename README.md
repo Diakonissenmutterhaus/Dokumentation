@@ -7,3 +7,4 @@ Este repositório contém um exemplo simples de site para documentações. As se
 1. Crie um arquivo Markdown em `docs/` com o conteúdo desejado. Exemplo: `docs/novasecao.md`.
 2. No `index.html`, adicione um item de menu apontando para o novo arquivo usando `docs/template.html?file=SEU_ARQUIVO.md`.
 3. Acesse o link pelo navegador para visualizar o conteúdo carregado no template, que utiliza o mesmo estilo e script de dark mode da página principal.
+4. Para testes rápidos, utilize o formulário na página inicial para adicionar um link temporário ao menu. Ele não salva no arquivo, servindo apenas para a sessão atual.

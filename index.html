@@ -30,13 +30,18 @@
     <!-- Sidebar -->
     <aside class="w-64 bg-gray-100 dark:bg-gray-800 p-4 hidden md:block min-h-full">
       <nav>
-        <ul class="space-y-2">
+        <ul id="menu-list" class="space-y-2">
           <li><a href="docs/template.html?file=introducao.md" class="block hover:underline">Introdução</a></li>
           <li><a href="docs/template.html?file=instalacao.md" class="block hover:underline">Instalação</a></li>
           <li><a href="docs/template.html?file=uso.md" class="block hover:underline">Como Usar</a></li>
           <li><a href="docs/template.html?file=faq.md" class="block hover:underline">FAQ</a></li>
           <li><a href="docs/template.html?file=contato.md" class="block hover:underline">Contato</a></li>
         </ul>
+        <div class="mt-4 space-y-1">
+          <input id="docName" placeholder="Nome" class="w-full px-2 py-1 border rounded" />
+          <input id="docFile" placeholder="arquivo.md" class="w-full px-2 py-1 border rounded" />
+          <button onclick="addDoc()" class="w-full bg-blue-500 text-white px-2 py-1 rounded">Adicionar documentação</button>
+        </div>
       </nav>
     </aside>
 
@@ -60,6 +65,21 @@
         html.classList.add('dark')
         localStorage.theme = 'dark'
       }
+    }
+
+    function addDoc() {
+      const name = document.getElementById('docName').value.trim()
+      const file = document.getElementById('docFile').value.trim()
+      if (!name || !file) return
+      const li = document.createElement('li')
+      const a = document.createElement('a')
+      a.href = `docs/template.html?file=${file}`
+      a.textContent = name
+      a.className = 'block hover:underline'
+      li.appendChild(a)
+      document.getElementById('menu-list').appendChild(li)
+      document.getElementById('docName').value = ''
+      document.getElementById('docFile').value = ''
     }
   </script>
 </body>
